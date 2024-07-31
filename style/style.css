@@ -5,11 +5,101 @@ html {
 body {
   margin: 0;
   font-family: "Work Sans", sans-serif;
+  height: 100%;
 }
 
+.countdown-container {
+  background: linear-gradient(135deg, #ff0099 0%, #493240 100%);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(135deg, #ff0099 0%, #493240 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #00ffcc 0%, #3333cc 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #ff9933 0%, #660033 100%);
+  }
+}
+
+.countdown {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.5s ease-in-out;
+}
+
+.countdown:hover {
+  transform: scale(1.05);
+}
+
+.countdown h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.countdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.countdown li {
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown span {
+  font-size: 3em;
+  font-weight: bold;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 30px #ff0099;
+  }
+  to {
+    text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+  }
+}
+
+/* Additional styles for better presentation */
+@media screen and (max-width: 768px) {
+  .countdown h1 {
+    font-size: 2em;
+  }
+
+  .countdown li {
+    font-size: 1.5em;
+  }
+
+  .countdown span {
+    font-size: 2.5em;
+  }
+}
+
+/* Original styles */
 .container {
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
   margin: 0 auto;
   text-align: center;
   visibility: hidden;
@@ -244,7 +334,6 @@ body {
     left: 37%;
   }
 }
-
 @media screen and (max-height: 700px) {
   .six .hat {
     left: 32%;
@@ -268,32 +357,46 @@ body {
 
   .text-box .fake-btn {
     right: 5px;
-    bottom: -38px;
+    bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    font-size: 16px;
   }
 
-  .idea-5 span {
-    display: block;
+  .five .idea-5 {
+    font-size: 3rem;
   }
 
   .idea-6 span {
-    font-size: 10rem;
+    font-size: 8rem;
   }
 
-  .six .hat {
-    width: 50px;
-    top: -20px;
+  .one {
+    font-size: 2.5rem;
+  }
+
+  .three {
+    font-size: 2.5rem;
   }
 
   .wish-hbd {
-    font-size: 2.2em;
+    font-size: 2.5rem;
   }
 
   .wish h5 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .five .idea-5 {
+    font-size: 2.5rem;
   }
 
-  .nine p {
-    font-size: 1.5rem;
-    font-weight: lighter;
+  .idea-6 span {
+    font-size: 5rem;
   }
 }
