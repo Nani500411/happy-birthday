@@ -408,9 +408,21 @@ body {
 p{
   color: #ffffff;
 }
-h{
+h {
   color: hsl(0, 0%, 100%);
 }
+
+/* Specific Styling for Data Node Name Attributes */
+.container [data-node-name="greeting"],
+.container [data-node-name="name"],
+.container [data-node-name="greetingText"],
+.container [data-node-name="text1"],
+.container [data-node-name="textInChatBox"],
+.container [data-node-name="sendButtonLabel"] {
+  color: white;
+}
+
+
 
 
 
@@ -432,7 +444,9 @@ h{
   transform-origin: center;
   transform-style: preserve-3d;
   transform: rotateY(calc(var(--i) * 45deg)) translateZ(350px);
-  -webkit-box-reflect: below 0px linear-gradient(transparent,transparent);
+  will-change: transform;
+  transition: transform 0.3s ease-in-out;
+  -webkit-box-reflect: below 10px linear-gradient(transparent, rgba(0,0,0,0.1)); /* Reflection */
 }
 .scope span img {
   position: absolute;
@@ -443,6 +457,8 @@ h{
   border-radius: 10px;
   object-fit: cover;
   transition: 2s;
+  will-change: transform;
+
 }
 .scope span:hover img {
   transform: translateY(-50px) scale(1.7);
